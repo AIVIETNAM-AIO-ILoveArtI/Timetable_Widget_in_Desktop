@@ -1,4 +1,4 @@
-# Timetable-Widget-in-Desktop
+# Timetable Widget in Desktop
 Đây là sản phẩm Vibe coding đầu tay của tôi. Sản phẩm này là một chatbot thu nhỏ dựa trên việc gọi API để đọc lịch và đưa cho bạn lịch trình hôm nay của bạn.
 
 [![Python](https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white)](#)
