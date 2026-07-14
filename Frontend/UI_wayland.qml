@@ -1,6 +1,6 @@
-import Quickshell import QtQuick import QtQuick.Controls.Basic import QtQuick.Layouts import QtWebSockets import QtQuick.Window
-PanelWindow { id: rootWindow focusable: true
-//delete picture outline
+import Quickshell import QtQuick import QtQuick.Controls.Basic import QtQuick.Layouts import QtWebSockets import QtQuick.Window
+PanelWindow { id: rootWindow focusable: true
+// xóa đường viền hình ảnh
 implicitWidth: Screen.width * 0.40 
 implicitHeight: implicitWidth * (1267.0 / 1291.0)
 
@@ -17,7 +17,7 @@ Image {
     fillMode: Image.Stretch 
 }
 
-// --- 🌟 memory appearance(help to the history chat always appear when using 🌟 ---
+// --- 🌟 giao diện bộ nhớ (giúp lịch sử trò chuyện luôn hiển thị khi sử dụng) 🌟 ---
 ListModel { id: chatHistoryModel }
 
 QtObject {
@@ -25,7 +25,7 @@ QtObject {
     function parseMessage(msg) {
         if (msg.startsWith("CHATBOT_RESPONSE:")) {
             var content = msg.substring(16);
-            // add list 
+            // thêm vào danh sách 
             chatHistoryModel.append({
                 "sender": "Anynomous",
                 "message": content,
@@ -44,7 +44,7 @@ WebSocket {
 
 Rectangle {
     id: chatBox
-    // standard x,y
+    // tọa độ x,y chuẩn
     x: parent.width * 0.09
     y: parent.height * 0.52
     width: parent.width * 0.68
@@ -60,14 +60,14 @@ Rectangle {
         anchors.margins: 10
         spacing: 8
 
-        // --- scrolling aprearance ---
+        // --- giao diện thanh cuộn ---
         ScrollView {
             id: chatScrollView
             Layout.fillWidth: true
             Layout.fillHeight: true
             clip: true
             
-            // scrolling rule
+            // quy tắc cuộn
             ScrollBar.vertical.policy: ScrollBar.AsNeeded
 
             ListView {
@@ -77,7 +77,7 @@ Rectangle {
                 spacing: 10
                 interactive: true
                 
-                // Template for each chat
+                // Giao diện mẫu cho mỗi đoạn chat
                 delegate: Rectangle {
                     width: chatListView.width * 0.92
                     height: msgText.implicitHeight + 20
@@ -97,12 +97,12 @@ Rectangle {
                     }
                 }
                 
-                // automactic jump to new reply
+                // tự động nhảy đến phản hồi mới
                 onCountChanged: chatListView.currentIndex = count - 1
             }
         }
 
-        // --- chat input ---
+        // --- khung nhập chat ---
         Rectangle {
             Layout.fillWidth: true
             Layout.preferredHeight: 35
@@ -121,7 +121,7 @@ Rectangle {
                 
                 onAccepted: {
                     if (text !== "") {
-                        // add your text to memory
+                        // thêm văn bản của bạn vào bộ nhớ
                         chatHistoryModel.append({
                             "sender": "Bạn",
                             "message": text,
