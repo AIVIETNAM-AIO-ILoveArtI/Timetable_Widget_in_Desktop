@@ -8,7 +8,7 @@ if __name__ == "__main__":
     engine = QQmlApplicationEngine()
 
     # Nạp file QML phiên bản phổ thông
-    qml_file = os.path.join(os.path.dirname(__file__), "Universal_widget.qml")
+    qml_file = os.path.join(os.path.dirname(__file__), "UI_Window.qml")
     engine.load(qml_file)
 
     if not engine.rootObjects():
