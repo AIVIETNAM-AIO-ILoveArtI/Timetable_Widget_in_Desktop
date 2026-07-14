@@ -1,2 +1,6 @@
 #write your own timetable
+#hãy viết lịch của bạn ở đây
 #this where AI read your timetable
+#đây là nơi AI sẽ đọc lịch tổng bộ của bạn để đưa cho bạn dữ liệu
+#bạn có thể nhờ các chatbot tóm tắt lịch sao cho tối ưu rồi sao chép vào đây cũng được
+
